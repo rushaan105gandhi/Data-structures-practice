@@ -1,6 +1,3 @@
-
-// C++ program to demonstrate descending order sort using
-// greater<>().
 #include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
