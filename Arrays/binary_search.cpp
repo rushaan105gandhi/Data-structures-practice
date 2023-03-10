@@ -34,21 +34,28 @@ int binarySearch(int arr[] , int size , int key){
 
 int main(){
 
-    int odd[5] = {1,3,5,7,9};
+    int n;
 
-    int even[8] = {2,4,6,8,10,12,14,16};
-
-    int evenIndex = binarySearch(even,8,12);
+    cout<<"Enter the size of the array"<<endl;
     
-    cout<<"Index of 12"<<endl;
+    cin>>n;
 
-    cout<<evenIndex<<endl;
+    int arr[n];
+    
+    cout<<"Enter the elements of the array"<<endl;
+    for(int i = 0; i < n; i++){
+        cin>>arr[i];
+    }
 
-    int oddIndex = binarySearch(odd,5,1);
+    cout<<"Enter the element you want to find"<<endl;
 
-    cout<<"Index of 10"<<endl;
+    int key;
 
-    cout<<oddIndex;
+    cin>>key;
+
+    int index = binarySearch(arr, n, key);
+
+    cout<<"The "<<key<<" is present at "<<index<<" Position!";    
 
     return 0;
 }
