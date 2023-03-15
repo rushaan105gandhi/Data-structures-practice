@@ -2,6 +2,7 @@
     INPUT: [1,2,3,4,5,6]
     OUTPUT:[2,1,4,3,6,4]
 */
+//array swap
 
 #include <iostream>
 using namespace std;
