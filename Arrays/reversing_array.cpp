@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+//reversing an array
+
 void reverse_array(int arr[], int n){
     int start = 0;
     int end = n-1;
