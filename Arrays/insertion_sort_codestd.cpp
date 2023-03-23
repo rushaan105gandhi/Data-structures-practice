@@ -11,7 +11,7 @@ int InsertionSort(vector<int> &arr, int n){
         for(; j >= 0; j--){
 
             if(arr[j]> temp){
-                arr[j+1] + arr[j];
+                arr[j+1] = arr[j];
             }
             else{
                 break;
