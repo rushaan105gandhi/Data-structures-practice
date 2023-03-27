@@ -7,6 +7,7 @@ using namespace std;
 vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
 {
 	int i = 0,j = 0;
+	//aray intersection
 	vector <int> ans;
 	while(i<n && j<m){
 		if (arr1[i] == arr2[j]){
