@@ -5,6 +5,7 @@ using namespace std;
 
 int main(){
 
+    //capacity and size are different
     vector<int> v;
     cout<<"capacity: "<<v.capacity()<<endl;
     v.push_back(1);
