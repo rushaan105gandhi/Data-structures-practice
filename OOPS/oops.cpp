@@ -12,6 +12,10 @@ class Hero{
     Padding: Adding some empty bytes to the memory in the structure to naturally align the data members in a memory/class.
     Static Allocation: Hero a; - - - - - -> a.sethealth() - - - -> a.gethealth()
     Dynamic Allocation: Hero *a = new Hero; - - - > a -> sethealth() - - - > a -> gethealth()
+    Constructor: Function invoked at the time of object creation with no return type. Same name of the class.
+    Default Constructor: Constructor when no other constructor is defined. Removed when we define our own Constructor.
+    Parameterized Constructor: Constructor with a parameter.
+    'This' Keyword: Stores the address of Current Object.
 */
     private:
     char level;
@@ -19,6 +23,17 @@ class Hero{
 
     public:  
     // char name[100];
+
+    /*
+    Hero(){
+        cout << "Constructor is called" << endl;
+    }
+    */
+
+    Hero(int health, char level){
+        this -> health = health;
+        this -> level = level;
+    }
     
     int gethealth(){
         return health;
@@ -41,7 +56,7 @@ class Hero{
 int main(){
 
     //Static allocation
-    Hero Paul;
+    Hero Paul(90,'D');
 
     cout << "This is Paul." << endl;
     Paul.sethealth(70);
@@ -53,12 +68,19 @@ int main(){
     cout << "This is Jake" << endl;
 
     //dynamic allocation
-    Hero *Jake = new Hero;
+    Hero *Jake = new Hero(70, 'D');
 
     Jake->sethealth(90);
     Jake->setlevel('B');
     cout << "Health is: " << Jake->gethealth() << endl;
     cout << "Level is: " << (*Jake).getlevel() << endl;
+
+    cout << "Object Logan is defined below: " << endl;
+    Hero Logan(50, 'D');
+    cout << "Object Logan is above." << endl;
+    cout << "Address of Logan: " << &Logan << endl;
+    cout << "Health of Logan: " << Logan.gethealth() << endl;
+    cout << "Level of Logan: " << Logan.getlevel() << endl;
 
 
     return 0;
