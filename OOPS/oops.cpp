@@ -9,20 +9,22 @@ class Hero{
     Empty Class: Class with no property has sizeof 1 byte.
     Access Modifiers: Private, Public, Protected  (By default: Private).
     Getters/Setters: used to access attributes of private datamembers.
+    Padding: Adding some empty bytes to the memory in the structure to naturally align the data members in a memory/class.
+    Static Allocation: Hero a; - - - - - -> a.sethealth() - - - -> a.gethealth()
+    Dynamic Allocation: Hero *a = new Hero; - - - > a -> sethealth() - - - > a -> gethealth()
 */
-    //properties
     private:
     char level;
     int health;
 
-    public:  //Access Modifier------------> By default Private
-    char name[100];
+    public:  
+    // char name[100];
     
     int gethealth(){
         return health;
     }
 
-    int getlevel(){
+    char getlevel(){
         return level;
     }
 
@@ -30,35 +32,33 @@ class Hero{
         health = h;
     }
 
-
-    void print(){
-        cout << "Level is: " << level << endl;
+    void setlevel(char lvl){
+        level = lvl;
     }
+
 };
-
-// class Box{ //Empty Class: Class w no property <------------Size of Empty Class = 1------------->
-
-//     // //properties
-//     // char name[100];
-//     // int health;
-//     // char level;
-// };
-
 
 int main(){
 
-    //creating object
-    // Hero rushaan;
-
-    // Box dabba;
-
-    // cout<<"size of Rushaan: "<<sizeof(rushaan)<<endl;
-
-    // cout<<"size of Dabba: "<<sizeof(dabba)<<endl;
-
+    //Static allocation
     Hero Paul;
+
+    cout << "This is Paul." << endl;
     Paul.sethealth(70);
-    cout<<"Health is: "<<Paul.gethealth();
+    Paul.setlevel('A');
+    cout << "Size of Paul is: " << sizeof(Paul) << endl;
+    cout << "Health is: " << Paul.gethealth() << endl;
+    cout << "Level is: " << Paul.getlevel() << endl;
+
+    cout << "This is Jake" << endl;
+
+    //dynamic allocation
+    Hero *Jake = new Hero;
+
+    Jake->sethealth(90);
+    Jake->setlevel('B');
+    cout << "Health is: " << Jake->gethealth() << endl;
+    cout << "Level is: " << (*Jake).getlevel() << endl;
 
 
     return 0;
