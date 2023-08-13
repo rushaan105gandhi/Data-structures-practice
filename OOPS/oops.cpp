@@ -16,6 +16,7 @@ class Hero{
     Default Constructor: Constructor when no other constructor is defined. Removed when we define our own Constructor.
     Parameterized Constructor: Constructor with a parameter.
     'This' Keyword: Stores the address of Current Object.
+    Copy Constructor: 
 */
     private:
     char level;
@@ -75,12 +76,25 @@ int main(){
     cout << "Health is: " << Jake->gethealth() << endl;
     cout << "Level is: " << (*Jake).getlevel() << endl;
 
+    //Parameterized Constructor   
     cout << "Object Logan is defined below: " << endl;
     Hero Logan(50, 'D');
     cout << "Object Logan is above." << endl;
     cout << "Address of Logan: " << &Logan << endl;
     cout << "Health of Logan: " << Logan.gethealth() << endl;
     cout << "Level of Logan: " << Logan.getlevel() << endl;
+
+    //Copy Constructor
+    cout << "This object is Roman: " << endl;
+    Hero Roman(55,'A');
+
+    cout << "Below is Reigns: " << endl;
+
+    Hero Reigns(Roman);
+     
+    cout << "Health is: " << Reigns.gethealth() << endl;
+    cout << "Level is: " << Reigns.getlevel() << endl;
+
 
 
     return 0;
