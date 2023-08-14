@@ -1,16 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
+/*
 
+    Mode of inheritence: if a pvt member of any class cannot be inherited.
+
+    public < protected < private
+
+*/
 
 class Human{
 
-    public:
+
+//    private:
+
+
+    protected:
 
         int height;
-        int weight;
         int age;
-
-    public:
+        int weight;
+        
 
         int getAge(){
             return this -> age;
@@ -30,6 +39,10 @@ class Male: public Human{
     void sleep(){
         cout << "Male is sleeping" << endl;
     }
+
+    int getHeight(){
+        return this -> height;
+    }
 };  
 
 
@@ -37,11 +50,8 @@ int main(){
 
     Male object;
 
-    cout << object.age << endl;
+    cout << object.getHeight() << endl;
 
-    cout << object.color << endl;
-
-    object.sleep();
 
     return 0;
 }
