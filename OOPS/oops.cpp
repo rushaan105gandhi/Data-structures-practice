@@ -17,7 +17,18 @@ class Hero{
     Parameterized Constructor: Constructor with a parameter.
     'This' Keyword: Stores the address of Current Object.
     Copy Constructor: used to initialize the members of a newly created object by copying the members of an already existing object. (pass by reference ONLY)
-    Deep/Shallow Copy: Accessing same memory in case of shallow copy
+    Deep/Shallow Copy: Accessing same memory in case of shallow copy.
+    Copy Assignment Operator: a = b - - - - > a.health = b.health and so on ...
+    Destructor (~Classname()): Deallocating memory
+    object created statically - - - - > Destructor automatically called
+    object created dynamically - - - - > Destructor to be called manually by delete object; 
+    Hero *b = new Hero;
+    delete b;
+    Const Keyword: 
+    Static Keyword: Creates a datamember that belongs to class, no need to create an object, can access without creating an object
+    Syntax to initalize static datamember:
+    int Hero::time_to_complete = 5; - - - - - >datatype of static data member (here int), Class Name (Here Hero), Scope resolution Opr(::), Value (here 5)
+    Static Function: no need to create object, no 'this' key word, CAN ONLY ACCESS STATIC MEMBERS
 */
     private:
     char level;
@@ -25,8 +36,11 @@ class Hero{
 
     public:  
     char *name;
+    static int time_to_complete;
+
     //Parameterized Constructor
     Hero(){
+        cout << "Normal Constructor Called: " << endl;
         this -> health = health;
         this -> level = level;
         name = new char[100];
@@ -45,7 +59,12 @@ class Hero{
         this -> health = Kratos.health;
         this -> level = Kratos.level;
     }
-    
+
+
+    static int timetocomplete(){
+       return time_to_complete;
+    }
+
     int gethealth(){
         return health;
     }
@@ -72,7 +91,13 @@ class Hero{
         cout << this ->level << endl;
     }
 
+    ~Hero(){
+        cout << "Destructor called: " << endl;
+    }
+
 };
+
+int Hero::time_to_complete = 5; 
 
 int main(){
 
@@ -113,23 +138,36 @@ int main(){
     // Hero Reigns(Roman);
 
 
-    Hero rushaan;
-    rushaan.sethealth(70);
-    rushaan.setlevel('A');
-    char name[7] = "Gandhi";
-    rushaan.setname(name); 
-    rushaan.print();
+    // Hero rushaan;
+    // rushaan.sethealth(70);
+    // rushaan.setlevel('A');
+    // char name[7] = "Gandhi";
+    // rushaan.setname(name); 
+    // rushaan.print();
 
-    //using default copy constructor
+    // //using default copy constructor
 
-    Hero prakhar(rushaan);
-    cout << "this is prakhar" << endl;
-    prakhar.print();
+    // Hero prakhar(rushaan);
+    // cout << "this is prakhar" << endl;
+    // prakhar.print();
 
-    rushaan.name[0] = 'A';
-    rushaan.print();
+    // rushaan.name[0] = 'A';
+    // rushaan.print();
 
-    prakhar.print();
+    // rushaan = prakhar;
+
+    // prakhar.print();
+
+    // Hero *Rushaan = new Hero;
+    // Rushaan->print();
+    // delete Rushaan;
+
+
+    //No need to create an object
+    cout << "No need to create an object: " << Hero::time_to_complete << endl;
+
+    Hero Rushaan;
+    cout << Rushaan.time_to_complete << endl;
 
     return 0;
 }
