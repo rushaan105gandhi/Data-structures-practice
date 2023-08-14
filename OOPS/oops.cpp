@@ -16,24 +16,34 @@ class Hero{
     Default Constructor: Constructor when no other constructor is defined. Removed when we define our own Constructor.
     Parameterized Constructor: Constructor with a parameter.
     'This' Keyword: Stores the address of Current Object.
-    Copy Constructor: 
+    Copy Constructor: used to initialize the members of a newly created object by copying the members of an already existing object. (pass by reference ONLY)
+    Deep/Shallow Copy: Accessing same memory in case of shallow copy
 */
     private:
     char level;
     int health;
 
     public:  
-    // char name[100];
-
-    /*
+    char *name;
+    //Parameterized Constructor
     Hero(){
-        cout << "Constructor is called" << endl;
-    }
-    */
-
-    Hero(int health, char level){
         this -> health = health;
         this -> level = level;
+        name = new char[100];
+    }
+
+
+    //Copy constructor
+    Hero(Hero& Kratos){
+
+        //deep copy: creating a new array ch and copying the elements of name in ch.
+        char *ch = new char[strlen(Kratos.name) + 1];
+        strcpy(ch, Kratos.name);
+        this -> name = ch;
+
+        cout << "Copy Constructor Called: " << endl;
+        this -> health = Kratos.health;
+        this -> level = Kratos.level;
     }
     
     int gethealth(){
@@ -52,50 +62,74 @@ class Hero{
         level = lvl;
     }
 
+    void setname(char name[]){
+        strcpy(this -> name, name);
+    }
+
+    void print(){
+        cout << this -> name << endl;
+        cout << this -> health << endl;
+        cout << this ->level << endl;
+    }
+
 };
 
 int main(){
 
     //Static allocation
-    Hero Paul(90,'D');
+    // Hero Paul(90,'D');
 
-    cout << "This is Paul." << endl;
-    Paul.sethealth(70);
-    Paul.setlevel('A');
-    cout << "Size of Paul is: " << sizeof(Paul) << endl;
-    cout << "Health is: " << Paul.gethealth() << endl;
-    cout << "Level is: " << Paul.getlevel() << endl;
+    // cout << "This is Paul." << endl;
+    // Paul.sethealth(70);
+    // Paul.setlevel('A');
+    // cout << "Size of Paul is: " << sizeof(Paul) << endl;
+    // cout << "Health is: " << Paul.gethealth() << endl;
+    // cout << "Level is: " << Paul.getlevel() << endl;
 
-    cout << "This is Jake" << endl;
+    // cout << "This is Jake" << endl;
 
-    //dynamic allocation
-    Hero *Jake = new Hero(70, 'D');
+    // //dynamic allocation
+    // Hero *Jake = new Hero(70, 'D');
 
-    Jake->sethealth(90);
-    Jake->setlevel('B');
-    cout << "Health is: " << Jake->gethealth() << endl;
-    cout << "Level is: " << (*Jake).getlevel() << endl;
+    // Jake->sethealth(90);
+    // Jake->setlevel('B');
+    // cout << "Health is: " << Jake->gethealth() << endl;
+    // cout << "Level is: " << (*Jake).getlevel() << endl;
 
-    //Parameterized Constructor   
-    cout << "Object Logan is defined below: " << endl;
-    Hero Logan(50, 'D');
-    cout << "Object Logan is above." << endl;
-    cout << "Address of Logan: " << &Logan << endl;
-    cout << "Health of Logan: " << Logan.gethealth() << endl;
-    cout << "Level of Logan: " << Logan.getlevel() << endl;
+    // //Parameterized Constructor   
+    // cout << "Object Logan is defined below: " << endl;
+    // Hero Logan(50, 'D');
+    // cout << "Object Logan is above." << endl;
+    // cout << "Address of Logan: " << &Logan << endl;
+    // cout << "Health of Logan: " << Logan.gethealth() << endl;
+    // cout << "Level of Logan: " << Logan.getlevel() << endl;
 
-    //Copy Constructor
-    cout << "This object is Roman: " << endl;
-    Hero Roman(55,'A');
+    // //Copy Constructor
+    // cout << "This object is Roman: " << endl;
+    // Hero Roman(55,'A');
 
-    cout << "Below is Reigns: " << endl;
+    // cout << "Below is Reigns: " << endl;
 
-    Hero Reigns(Roman);
-     
-    cout << "Health is: " << Reigns.gethealth() << endl;
-    cout << "Level is: " << Reigns.getlevel() << endl;
+    // Hero Reigns(Roman);
 
 
+    Hero rushaan;
+    rushaan.sethealth(70);
+    rushaan.setlevel('A');
+    char name[7] = "Gandhi";
+    rushaan.setname(name); 
+    rushaan.print();
+
+    //using default copy constructor
+
+    Hero prakhar(rushaan);
+    cout << "this is prakhar" << endl;
+    prakhar.print();
+
+    rushaan.name[0] = 'A';
+    rushaan.print();
+
+    prakhar.print();
 
     return 0;
 }
