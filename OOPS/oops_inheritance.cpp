@@ -13,6 +13,10 @@ using namespace std;
         3. Multiple Inheritance: object or class can inherit features from more than one parent object or parent class. 
         4. Hierarchical inheritance: Hierarchical inheritance, more than one sub-class inherits the property of a single base class.   
         5. Hybrid Inheritance: Combination of more than one type of inheritance.
+    
+    What is Inheritance Ambiguity? How to remove inheritance ambiguity?
+        When 2 different classes have same function name, and the child inherits the parent classes and the function is called.
+        obj.Parent_class::function_name;
 
 */
 
