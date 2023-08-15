@@ -13,7 +13,7 @@ using namespace std;
         3. Multiple Inheritance: object or class can inherit features from more than one parent object or parent class. 
         4. Hierarchical inheritance: Hierarchical inheritance, more than one sub-class inherits the property of a single base class.   
         5. Hybrid Inheritance: Combination of more than one type of inheritance.
-        
+
 */
 
 class Human{
@@ -50,7 +50,7 @@ class Animal{
     public:
         int hair;
 
-        void hair_color(){
+        void fun(){
             cout << "Hair color is brown" << endl;
         }
 };
@@ -83,10 +83,10 @@ class Indian: public Human, public Animal{
 };
 
 //Inherited from human
-class Female: public Human{
+class Female: public Human, public Animal{
 
     public:
-        void fun3(){
+        void fun1(){
             cout << "This is fun3" << endl;
         }
 
@@ -95,23 +95,12 @@ class Female: public Human{
 
 int main(){
 
+    Female girl;
 
+    girl.Human::fun();
 
-    Male man;
+    girl.Animal::fun();
 
-    cout << "This is Male class: " << endl;
-
-    man.fun();
-
-    man.fun1();
-
-    Female woman;
-
-    cout << "This is female class: " << endl;
-
-    woman.fun();
-
-    woman.fun3();
 
     return 0;
 }
