@@ -4,30 +4,56 @@ using namespace std;
 class Hero{ 
 /*    
     Object Oriented Programming: Programming where organization of the software is based around objects.
+    
     Object: entity that has attributes.
+    
     Class: BluePrint of the object.
+    
     Empty Class: Class with no property has sizeof 1 byte.
+    
     Access Modifiers: Private, Public, Protected  (By default: Private).
+    
     Getters/Setters: used to access attributes of private datamembers.
+    
     Padding: Adding some empty bytes to the memory in the structure to naturally align the data members in a memory/class.
+    
     Static Allocation: Hero a; - - - - - -> a.sethealth() - - - -> a.gethealth()
+    
     Dynamic Allocation: Hero *a = new Hero; - - - > a -> sethealth() - - - > a -> gethealth()
+    
     Constructor: Function invoked at the time of object creation with no return type. Same name of the class.
+    
+    
     Default Constructor: Constructor when no other constructor is defined. Removed when we define our own Constructor.
+    
     Parameterized Constructor: Constructor with a parameter.
+    
     'This' Keyword: Stores the address of Current Object.
+    
     Copy Constructor: used to initialize the members of a newly created object by copying the members of an already existing object. (pass by reference ONLY)
+    
     Deep/Shallow Copy: Accessing same memory in case of shallow copy.
+    
     Copy Assignment Operator: a = b - - - - > a.health = b.health and so on ...
+    
     Destructor (~Classname()): Deallocating memory
+    
     object created statically - - - - > Destructor automatically called
+    
     object created dynamically - - - - > Destructor to be called manually by delete object; 
+    
     Hero *b = new Hero;
+    
     delete b;
+    
     Const Keyword: 
+    
     Static Keyword: Creates a datamember that belongs to class, no need to create an object, can access without creating an object
+    
     Syntax to initalize static datamember:
+    
     int Hero::time_to_complete = 5; - - - - - >datatype of static data member (here int), Class Name (Here Hero), Scope resolution Opr(::), Value (here 5)
+    
     Static Function: no need to create object, no 'this' key word, CAN ONLY ACCESS STATIC MEMBERS
 */
     private:
