@@ -38,3 +38,21 @@ public:
           return ans; 
     }
 };
+/*
+OPTIMAL SOL USING XOR
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int Xor = 0;
+        int Xorr = 0;
+        int n = nums.size();
+        for(int i = 0; i < n; i++){
+            Xor = Xor^nums[i]; //xor w every element of array
+            Xorr = Xorr^(i+1); //xor w all natural numbers i.e. 0+1,0+2...
+        }
+        return Xor^Xorr;
+    }
+    
+};
+*/
