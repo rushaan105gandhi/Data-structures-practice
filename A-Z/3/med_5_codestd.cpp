@@ -2,10 +2,11 @@
 using namespace std;
 
 /*
-    Problem: Stocks Buy and Sell: TELL MAX PROFIT
+    121. Best Time to Buy and Sell Stock: SAME CODE FOR LEETCODE AND CODE STUDIO
+    
     Problem Link:
-    https://www.codingninjas.com/studio/problems/best-time-to-buy-and-sell-stock_6194560?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTab=1
-
+    https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+    
     Complexity Analysis:
         Time Complexity: O(N)
         Space Complexity: O(1)
