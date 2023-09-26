@@ -1,7 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//https://www.codingninjas.com/studio/problems/ninja-and-the-second-order-elements_6581960?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
+/*
+  Find Second Order Elements
+
+  Problem Link:
+  //https://www.codingninjas.com/studio/problems/ninja-and-the-second-order-elements_6581960?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
+
+  Complexity Analysis:
+    Time Complexity: O(N) + O(N)
+    Space Complexity: O(1)
+*/
+
 
 int secondLargestNo(vector<int>&a){
 
