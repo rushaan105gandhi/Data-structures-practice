@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 /*
-    Problem Link:
+    Problem Link: Ckeck if Array is Sorted and Rotated
     https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/
 */
 
