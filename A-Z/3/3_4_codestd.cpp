@@ -2,6 +2,7 @@
 using namespace std;
 
 /*
+	Problem: Remove Duplicates
     https://www.codingninjas.com/studio/problems/remove-duplicates-from-sorted-array_1102307?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
 */
 
