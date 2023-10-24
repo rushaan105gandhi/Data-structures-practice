@@ -2,6 +2,11 @@
 /*
     Count subarrays with given sum
     https://www.codingninjas.com/studio/problems/subarray-sums-i_1467103?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTab=1
+
+
+    Complexity Analysis:
+        Time Complexity: O(N * Log N)
+        Space Complexity: O(N)//map
 */
 #include <bits/stdc++.h>
 using namespace std;
