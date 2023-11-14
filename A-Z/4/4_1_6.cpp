@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    Problem link
+    https://www.codingninjas.com/studio/problems/first-and-last-position-of-an-element-in-sorted-array_1082549?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=SUBMISSION
+*/
 
 int firstOccurence (vector <int>&arr, int n, int k){
 
