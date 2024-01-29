@@ -1,34 +1,47 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int floor (vector<int> &a, int n, int x) {
-	int ans = -1;
+//Floor and ceil Problem
+/*
+	problem Link: https://www.codingninjas.com/studio/problems/ceiling-in-a-sorted-array_1825401?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=PROBLEM
+*/
+
+int lowerBound(vector<int> &a, int n, int x) {
 	int low = 0;
-	int high = n - 1;
+	int high = n-1;
+	int ans = -1;
 
-	while (low <= high) {
-		int mid = low + ((high - low)/2);
+	while(low <= high) {
+		int mid = low + (high-low)/2;
 
-		if (a[mid] <= x) {
+		if(a[mid] == x) {
 			ans = a[mid];
-			low = mid + 1;
+			return ans;
+		}
+		else if(a[mid] > x) {
+			high = mid - 1;
 		}
 		else {
-			high = mid - 1;
+			ans = a[mid];
+			low = mid + 1;
 		}
 	}
 	return ans;
 }
 
-int ceil (vector<int> &a, int n, int x) {
-	int ans = -1;
+int upperBound(vector<int> &a, int n, int x) {
 	int low = 0;
-	int high = n - 1;
+	int high = n-1;
+	int ans = -1;
 
 	while (low <= high) {
-		int mid = low + ((high - low)/2);
+		int mid = low + (high-low)/2;
 
-		if (a[mid] >= x) {
+		if(a[mid] == x) {
+			ans = a[mid];
+			return ans;
+		}
+		else if(a[mid] > x) {
 			ans = a[mid];
 			high = mid - 1;
 		}
@@ -38,6 +51,10 @@ int ceil (vector<int> &a, int n, int x) {
 	}
 	return ans;
 }
+
 pair<int, int> getFloorAndCeil(vector<int> &a, int n, int x) {
-	return {floor(a,n,x), ceil(a,n,x)};
+	int floor = lowerBound(a, n, x)	;
+	int ceil = upperBound(a, n, x);
+
+	return{floor, ceil}	;
 }
