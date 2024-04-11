@@ -12,6 +12,7 @@ int findMin(vector<int>& arr)
 
 		if (arr[low] <= arr[high]) {
 			ans = min(ans, arr[low]);
+            break;
 		}
 		
 		if (arr[low] <= arr[mid]){
