@@ -3,6 +3,8 @@
     Problem Link: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/1229148273/
 */
 
+// You can optimize this code, its optional. you can see the optimal code in the next version of the same problem
+
 #include <bits/stdc++.h>
 using namespace std;
 
