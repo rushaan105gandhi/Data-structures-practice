@@ -1,6 +1,7 @@
 /*
     Problem: How many times array has been rotated
     Problem Link: https://www.naukri.com/code360/problems/rotation_7449070?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=SUBMISSION
+	approach: find minimum, its index is the number of times array has been rotated
 */
 #include<bits/stdc++.h>
 using namespace std;
