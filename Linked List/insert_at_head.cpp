@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//INSERT AT HEAD
+
 class Node {
 
     public:
@@ -46,6 +48,6 @@ int main() {
 
     insertAtHead(head, 15);
     print(head);
-    
+
     return 0;
 }
