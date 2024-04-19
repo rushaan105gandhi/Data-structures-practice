@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// insert at tail
+
 class Node {
 
     public:
